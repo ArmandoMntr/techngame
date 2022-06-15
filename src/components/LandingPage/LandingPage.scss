@@ -1,0 +1,15 @@
+.landing {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(228, 215, 215);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+  font-weight: bold;
+  flex-direction: column;
+  svg {
+    width: 80px;
+    height: 80px;
+  }
+}
