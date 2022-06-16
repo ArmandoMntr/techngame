@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import "./NavigationBar.scss";
+import Cart from "../Cart/Cart";
 
 // no valid href values for now
 
@@ -27,6 +28,9 @@ const NavigationBar = () => {
           </Nav.Link>
           <Nav.Link className="navBarLink loginLink" href="#link">
             Login
+          </Nav.Link>
+          <Nav.Link className="navBarLink loginLink" href="#link">
+            <Cart />
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

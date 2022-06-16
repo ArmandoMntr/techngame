@@ -1,15 +1,14 @@
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
-import LandingPage from "./components/LandingPage/LandingPage";
+import ItemList from "./components/ItemList/ItemList";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
-
-import React from "react";
 
 const App = () => {
   return (
     <>
       <NavigationBar />
-      <LandingPage />
+      <ItemList greeting={"Here will be the items"} />
     </>
   );
 };
