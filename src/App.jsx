@@ -3,13 +3,15 @@ import "./App.scss";
 import LandingPage from "./components/LandingPage/LandingPage";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 
-function App() {
+import React from "react";
+
+const App = () => {
   return (
     <>
       <NavigationBar />
       <LandingPage />
     </>
   );
-}
+};
 
 export default App;

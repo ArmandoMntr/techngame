@@ -1,7 +1,7 @@
 import React from "react";
 import "./LandingPage.scss";
 
-function LandingPage() {
+const LandingPage = () => {
   return (
     <div className="landing">
       <p>Under Construction</p>
@@ -17,6 +17,6 @@ function LandingPage() {
       </svg>
     </div>
   );
-}
+};
 
 export default LandingPage;

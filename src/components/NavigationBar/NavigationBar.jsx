@@ -2,10 +2,9 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import "./NavigationBar.scss";
 
-/* Sales, Products, New Arrivals, Wish List, Contact Us, Login */
 // no valid href values for now
 
-function NavigationBar() {
+const NavigationBar = () => {
   return (
     <Navbar bg="light" expand="lg" className="navBarWrapper">
       <Navbar.Brand href="#home" className="navBarTitle">
@@ -33,6 +32,6 @@ function NavigationBar() {
       </Navbar.Collapse>
     </Navbar>
   );
-}
+};
 
 export default NavigationBar;
