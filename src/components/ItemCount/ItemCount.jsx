@@ -26,11 +26,19 @@ const ItemCount = ({ stock, initial }) => {
           </Card.Text>
           <ListGroup variant="flush">
             <ListGroup.Item>
-              <Button onClick={onSubstract} variant="light">
+              <Button
+                onClick={onSubstract}
+                disabled={count === 1 ? true : false}
+                variant="light"
+              >
                 -
               </Button>{" "}
               <Button variant="light">{count}</Button>{" "}
-              <Button onClick={onAdd} variant="light">
+              <Button
+                onClick={onAdd}
+                disabled={count === stock ? true : false}
+                variant="light"
+              >
                 +
               </Button>{" "}
             </ListGroup.Item>
