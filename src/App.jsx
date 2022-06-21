@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <NavigationBar />
-      <ItemList greeting={"Here will be the items"} />
+      <ItemList greeting={"Here will be more items"} />
     </>
   );
 };
