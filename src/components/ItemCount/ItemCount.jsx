@@ -2,17 +2,23 @@ import React, { useState } from "react";
 import { Card, Button, ListGroup } from "react-bootstrap";
 // import Rocket from "../../assets/rocket/rocket.svg";
 import "./ItemCount.scss";
-const ItemCount = ({ stock, initial }) => {
-  const [count, setCount] = useState(initial);
+const ItemCount = ({ stock }) => {
+  const [count, setCount] = useState(1);
 
   const onAdd = () => {
     count < stock ? setCount(count + 1) : setCount(stock);
-    console.log("onAdd function called");
   };
 
   const onSubstract = () => {
     count > 1 ? setCount(count - 1) : setCount(1);
-    console.log("onSubstract function called");
+  };
+
+  const disabledMinus = () => {
+    return count === 1 ? true : false;
+  };
+
+  const disabledPlus = () => {
+    return count === stock ? true : false;
   };
 
   return (
@@ -28,17 +34,13 @@ const ItemCount = ({ stock, initial }) => {
             <ListGroup.Item>
               <Button
                 onClick={onSubstract}
-                disabled={count === 1 ? true : false}
+                disabled={disabledMinus()}
                 variant="light"
               >
                 -
               </Button>{" "}
               <Button variant="light">{count}</Button>{" "}
-              <Button
-                onClick={onAdd}
-                disabled={count === stock ? true : false}
-                variant="light"
-              >
+              <Button onClick={onAdd} disabled={disabledPlus()} variant="light">
                 +
               </Button>{" "}
             </ListGroup.Item>

@@ -2,16 +2,24 @@ import React from "react";
 import "./ItemList.scss";
 import Bag from "../../assets/bag/bag.svg";
 import ItemCount from "../ItemCount/ItemCount";
+
 const ItemList = ({ greeting }) => {
-  const random = [];
-  for (let i = 0; i < 10; i++) {
-    random.push(Math.floor(Math.random() * 100));
-  }
+  const random = [
+    ...new Set(
+      Array.from({ length: 10 }, () => Math.floor(Math.random() * 100))
+    ),
+  ];
   return (
     <div className="landing">
       <div className="cardsWrapper">
         {random.map((number) => {
-          return <ItemCount key={number} stock={number} initial={1} />;
+          return (
+            <ItemCount
+              key={number}
+              stock={number}
+              //  initial={1}
+            />
+          );
         })}
         <footer>
           <p>{greeting}</p>
