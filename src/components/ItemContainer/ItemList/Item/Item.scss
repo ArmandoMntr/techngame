@@ -1,0 +1,21 @@
+.card {
+  height: fit-content;
+  .card-body {
+    padding: 0.5rem 0.5rem;
+  }
+  .card-img-top {
+    height: 20vh;
+    width: 100%;
+  }
+  .card-text {
+    font-size: small;
+  }
+  .cardStock {
+    font-weight: bold;
+    font-size: small;
+  }
+  .btn-primary {
+    background-color: gray;
+    border: gray;
+  }
+}

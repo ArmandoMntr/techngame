@@ -1,14 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
-import ItemList from "./components/ItemList/ItemList";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
+import ItemContainer from "./components/ItemContainer/ItemContainer";
 
 const App = () => {
   return (
     <>
       <NavigationBar />
-      <ItemList greeting={"Here will be more items"} />
+      <ItemContainer />
     </>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import "./ItemList.scss";
 import Bag from "../../assets/bag/bag.svg";
 import ItemCount from "../ItemCount/ItemCount";
+import { useState } from "react";
 
 const ItemList = ({ greeting }) => {
   const random = [
@@ -9,6 +10,7 @@ const ItemList = ({ greeting }) => {
       Array.from({ length: 10 }, () => Math.floor(Math.random() * 100))
     ),
   ];
+
   return (
     <div className="landing">
       <div className="cardsWrapper">

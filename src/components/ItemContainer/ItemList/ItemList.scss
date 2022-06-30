@@ -1,0 +1,14 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.landing {
+  background-color: rgb(247, 241, 234);
+  .cardsWrapper {
+    @include center;
+  }
+  .card {
+    margin: 0.2em;
+  }
+}
