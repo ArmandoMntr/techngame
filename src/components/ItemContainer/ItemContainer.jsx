@@ -11,13 +11,10 @@ const ItemContainer = () => {
         .then((data) => data.json())
         .then((data) => setItems(data.products))
         .catch((err) => console.log(err));
-    }, 2000);
+    }, 1);
   }, []);
 
-  // return <LoadingTitle />;
   return items === undefined ? <LoadingTitle /> : <ItemList data={items} />;
-
-  // return <ItemList data={items} />;
 };
 
 export default ItemContainer;

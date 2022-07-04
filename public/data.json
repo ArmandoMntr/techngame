@@ -2,6 +2,18 @@
   "products": [
     {
       "id": 1,
+      "title": "iPhone X",
+      "price": 899,
+      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://dummyjson.com/image/i/products/2/thumbnail.jpg",
+      "images": "https://dummyjson.com/image/i/products/2/1.jpg"
+    },
+    {
+      "id": 2,
       "title": "iPhone 9",
       "price": 549,
       "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
@@ -12,18 +24,6 @@
       "category": "smartphones",
       "thumbnail": "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
       "images": "https://dummyjson.com/image/i/products/1/1.jpg"
-    },
-    {
-      "id": 2,
-      "title": "iPhone X",
-      "price": 899,
-      "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-      "rating": 4.44,
-      "stock": 34,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "https://dummyjson.com/image/i/products/2/thumbnail.jpg",
-      "images": "https://dummyjson.com/image/i/products/2/1.jpg"
     },
     {
       "id": 3,

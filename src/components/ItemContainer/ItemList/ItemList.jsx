@@ -7,12 +7,18 @@ const ItemList = ({ data }) => {
       <div className="cardsWrapper">
         {data &&
           data.map((item) => {
-            const { thumbnail, title, description, stock, id } = item;
+            const {
+              thumbnail,
+              title,
+              /* description, */
+              stock,
+              id,
+            } = item;
             return (
               <Item
                 img={thumbnail}
                 title={title}
-                description={description}
+                // description={description}
                 stock={stock}
                 key={id}
               />
