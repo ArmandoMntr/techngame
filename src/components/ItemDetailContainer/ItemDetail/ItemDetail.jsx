@@ -23,6 +23,9 @@ const ItemDetail = ({ detail }) => {
             </h2>
           </div>
           <div className="circle"></div>
+          <div className="imgWrapper">
+            <img src={detail.thumbnail} alt={detail.title}></img>
+          </div>
         </div>
       </div>
     </>

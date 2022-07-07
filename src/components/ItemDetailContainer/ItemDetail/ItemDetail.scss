@@ -42,4 +42,12 @@ body {
   .detail {
     margin-bottom: 5px;
   }
+  .imgWrapper {
+    display: flex;
+    justify-content: center;
+    img {
+      height: 200px;
+      width: 200px;
+    }
+  }
 }
