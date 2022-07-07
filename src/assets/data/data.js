@@ -165,14 +165,14 @@ const data = {
     },
     {
       id: 11,
-      title: "Kirbt",
+      title: "Kirby",
       price: 13,
       description:
         "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
       rating: 4.26,
       stock: 65,
       brand: "Impression of Acqua Di Gio",
-      category: "fragrances",
+      category: "videogames",
       thumbnail:
         "https://m.media-amazon.com/images/I/81kfvGfF+SL._AC_SY741_.jpg",
     },
