@@ -11,7 +11,7 @@ const NavigationBar = () => {
     { id: "1", address: "/", text: "All Products" },
     { id: "2", address: "/category/smartphones", text: "Smartphones" },
     { id: "3", address: "/category/laptops", text: "Laptops" },
-    { id: "4", address: "/category/fragrances", text: "Fragances" },
+    { id: "4", address: "/category/videogames", text: "Video Games" },
   ];
 
   return (
