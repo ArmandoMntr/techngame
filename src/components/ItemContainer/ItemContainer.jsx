@@ -1,20 +1,37 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList/ItemList";
 import LoadingTitle from "../LoadingTitle/LoadingTitle";
+
+import { useParams } from "react-router-dom";
+import data from "../../assets/data/data";
+
 const ItemContainer = () => {
-  const [items, setItems] = useState();
+  const [items, setItems] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+  const { params } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      fetch("data.json")
-        //using dummyjson.com/products for now
-        .then((data) => data.json())
-        .then((data) => setItems(data.products))
-        .catch((err) => console.log(err));
-    }, 1);
-  }, []);
+    setLoading(true);
+    const getItems = new Promise((resolve) => {
+      setTimeout(() => {
+        const myData = params
+          ? data.products.filter((item) => item.category === params)
+          : data.products;
 
-  return items === undefined ? <LoadingTitle /> : <ItemList data={items} />;
+        resolve(myData);
+      }, 1000);
+    });
+
+    getItems
+      .then((res) => {
+        setItems(res);
+      })
+      .finally(() => setLoading(false));
+  }, [params]);
+
+  return loading ? <LoadingTitle /> : <ItemList data={items} />;
 };
 
 export default ItemContainer;

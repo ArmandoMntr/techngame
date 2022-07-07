@@ -21,6 +21,7 @@ const ItemList = ({ data }) => {
                 // description={description}
                 stock={stock}
                 key={id}
+                id={id}
               />
             );
           })}

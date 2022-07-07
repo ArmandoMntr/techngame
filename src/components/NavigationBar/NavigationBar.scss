@@ -12,7 +12,10 @@
     .loginLink {
       font-weight: bold;
     }
-    .navBarLink {
+    .active {
+      text-decoration: underline;
+    }
+    .nav-link {
       margin-left: 30px;
     }
   }

@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail/ItemDetail";
 import SpinnerLoad from "../SpinerLoad/SpinerLoad";
+import data from "../../assets/data/data";
+import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
   const [detail, setDetail] = useState();
-  const getItem = () => {
-    setTimeout(() => {
-      fetch("data.json")
-        .then((data) => data.json())
-        .then((items) => setDetail(items.products))
-        .catch((err) => console.log(err));
-    }, 2000);
-  };
+  const [loading, setLoading] = useState(true);
+
+  const { itemId } = useParams();
 
   useEffect(() => {
-    getItem();
-  }, []);
+    setLoading(true);
+    const getItems = new Promise((resolve) => {
+      setTimeout(() => {
+        const myData = data.products.find(
+          (item) => item.id === parseInt(itemId)
+        );
 
-  return detail === undefined ? (
-    <SpinnerLoad />
-  ) : (
-    <ItemDetail detail={detail[0]} />
-  );
+        resolve(myData);
+      }, 1000);
+    });
+
+    getItems
+      .then((res) => {
+        setDetail(res);
+      })
+      .finally(() => setLoading(false));
+  }, [itemId]);
+
+  return loading ? <SpinnerLoad /> : <ItemDetail detail={detail} />;
 };
 
 export default ItemDetailContainer;
