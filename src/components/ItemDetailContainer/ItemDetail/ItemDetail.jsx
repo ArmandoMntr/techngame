@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemCount from "../../ItemCount/ItemCount";
+import { Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./ItemDetail.scss";
 const ItemDetail = ({ detail }) => {
+  const [count, setCount] = useState(1);
+
+  const handleCount = (count) => {
+    setCount(count);
+    console.log("estado del counter en itemDetail " + count);
+  };
   return (
     <>
       <div>
@@ -28,7 +36,15 @@ const ItemDetail = ({ detail }) => {
             <img src={detail.thumbnail} alt={detail.title}></img>
           </div>
         </div>
-        <ItemCount stock={detail.stock} />
+        {count === 1 ? (
+          <ItemCount stock={detail.stock} handleCount={handleCount} />
+        ) : (
+          <Card>
+            <Link to={`/cart`}>
+              <Button className="checkoutButton">Checkout (ver consola)</Button>
+            </Link>
+          </Card>
+        )}
       </div>
     </>
   );

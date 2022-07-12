@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Card, Button, ListGroup } from "react-bootstrap";
 // import Rocket from "../../assets/rocket/rocket.svg";
 import "./ItemCount.scss";
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, handleCount }) => {
   const [count, setCount] = useState(1);
 
   const onAdd = () => {
@@ -24,12 +24,11 @@ const ItemCount = ({ stock }) => {
   return (
     <>
       <Card>
-        {/* <Card.Img variant="top" src={Rocket} /> */}
         <Card.Body>
-          <Card.Title>Item</Card.Title>
+          {/* <Card.Title>Item</Card.Title>
           <Card.Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Card.Text>
+          </Card.Text> */}
           <ListGroup variant="flush">
             <ListGroup.Item>
               <Button
@@ -45,7 +44,7 @@ const ItemCount = ({ stock }) => {
               </Button>{" "}
             </ListGroup.Item>
           </ListGroup>
-          <Button variant="primary">Add to Cart</Button>
+          <Button onClick={(event) => handleCount(count)}>Add to Cart</Button>
         </Card.Body>
         <Card.Footer>
           <small className="text-muted">Stock: {stock}</small>

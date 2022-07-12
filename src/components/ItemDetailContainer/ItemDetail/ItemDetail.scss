@@ -10,6 +10,9 @@ body {
   box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   border: 0;
+  a {
+    text-decoration: none;
+  }
   .circle {
     border-radius: 3px;
     width: 150px;
@@ -50,4 +53,12 @@ body {
       width: 200px;
     }
   }
+}
+
+.checkoutButton {
+  background-color: white;
+  color: white;
+  border: 1px solid black;
+  display: flex;
+  text-decoration: none;
 }
