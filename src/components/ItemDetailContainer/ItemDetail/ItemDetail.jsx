@@ -28,7 +28,7 @@ const ItemDetail = ({ detail }) => {
             <img src={detail.thumbnail} alt={detail.title}></img>
           </div>
         </div>
-        <ItemCount />
+        <ItemCount stock={detail.stock} />
       </div>
     </>
   );
