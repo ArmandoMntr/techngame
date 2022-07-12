@@ -1,4 +1,5 @@
 import React from "react";
+import ItemCount from "../../ItemCount/ItemCount";
 import "./ItemDetail.scss";
 const ItemDetail = ({ detail }) => {
   return (
@@ -27,6 +28,7 @@ const ItemDetail = ({ detail }) => {
             <img src={detail.thumbnail} alt={detail.title}></img>
           </div>
         </div>
+        <ItemCount />
       </div>
     </>
   );
