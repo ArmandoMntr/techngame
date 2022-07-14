@@ -44,10 +44,10 @@ const ItemCount = ({ stock, handleCount }) => {
               </Button>{" "}
             </ListGroup.Item>
           </ListGroup>
-          <Button onClick={(event) => handleCount(count)}>Add to Cart</Button>
+          <Button onClick={handleCount(count)}>Add to Cart</Button>
         </Card.Body>
         <Card.Footer>
-          <small className="text-muted">Stock: {stock}</small>
+          <small className="text-muted">Stock: {stock} (ver consola)</small>
         </Card.Footer>
       </Card>
     </>

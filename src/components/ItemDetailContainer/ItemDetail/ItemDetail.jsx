@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import ItemCount from "../../ItemCount/ItemCount";
-import { Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import CartContext from "../../../context/cartContext";
+// import { Button, Card } from "react-bootstrap";
+// import { Link } from "react-router-dom";
 import "./ItemDetail.scss";
 const ItemDetail = ({ detail }) => {
   const [count, setCount] = useState(1);
 
   const handleCount = (count) => {
     setCount(count);
+
     console.log("estado del counter en itemDetail " + count);
   };
+  const cartContext = useContext(CartContext);
   return (
     <>
       <div>
@@ -36,15 +40,16 @@ const ItemDetail = ({ detail }) => {
             <img src={detail.thumbnail} alt={detail.title}></img>
           </div>
         </div>
-        {count === 1 ? (
-          <ItemCount stock={detail.stock} handleCount={handleCount} />
+        <ItemCount stock={detail.stock} handleCount={handleCount} />
+        {/* handleCount={handleCount} */}
+        {/* {count === 1 ? (
         ) : (
           <Card>
             <Link to={`/cart`}>
               <Button className="checkoutButton">Checkout (ver consola)</Button>
             </Link>
           </Card>
-        )}
+        )} */}
       </div>
     </>
   );
