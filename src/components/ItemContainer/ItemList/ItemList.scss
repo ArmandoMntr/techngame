@@ -1,14 +1,14 @@
-@mixin center {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 .landing {
+  height: 100%;
   background-color: rgb(247, 241, 234);
-  .cardsWrapper {
-    @include center;
+  @media screen and (min-width: 1192px) {
+    height: 100vh;
   }
-  .card {
-    margin: 0.2em;
+  .cardsWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 30px;
   }
 }

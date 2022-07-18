@@ -1,21 +1,24 @@
-.card {
-  height: fit-content;
-  .card-body {
-    padding: 0.5rem 0.5rem;
+.detailLink {
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+}
+
+.cardItem {
+  padding: 10px;
+  justify-content: center;
+  border-radius: 2rem;
+  height: 100%;
+  .cardImg {
+    height: auto;
   }
-  .card-img-top {
-    height: 20vh;
-    width: 100%;
-  }
-  .card-text {
-    font-size: small;
+  .cardTitle {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
   }
   .cardStock {
-    font-weight: bold;
-    font-size: small;
-  }
-  .btn-primary {
-    background-color: gray;
-    border: gray;
+    text-align: center;
+    margin-top: 5px;
   }
 }

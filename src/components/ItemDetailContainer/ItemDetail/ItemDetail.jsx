@@ -1,57 +1,53 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Button, Card } from "react-bootstrap";
 import ItemCount from "../../ItemCount/ItemCount";
-import { useContext, useState } from "react";
-import CartContext from "../../../context/cartContext";
-// import { Button, Card } from "react-bootstrap";
-// import { Link } from "react-router-dom";
 import "./ItemDetail.scss";
+import { CartContext } from "../../../context/cartContext";
+import { Link } from "react-router-dom";
+
 const ItemDetail = ({ detail }) => {
-  const [count, setCount] = useState(1);
+  const { thumbnail, title, price, stock, description } = detail;
+  const { addToCart } = useContext(CartContext);
 
-  const handleCount = (count) => {
-    setCount(count);
+  const [cartState, setCartState] = useState(false);
 
-    console.log("estado del counter en itemDetail " + count);
+  const onAdd = (count) => {
+    setCartState(true);
+    addToCart(detail, count);
   };
-  const cartContext = useContext(CartContext);
+
+  const continueShopping = () => {
+    setCartState(false);
+  };
   return (
-    <>
-      <div>
-        <div className="card">
-          <div className="title">
-            <h1>{detail.title}</h1>
-          </div>
-          <div className="content">
-            <h2 className="detail">
-              <span>Price:</span> {detail.price}
-            </h2>
-            <h2 className="detail">
-              <span>Rating:</span> {detail.rating}
-            </h2>
-            <h2 className="detail">
-              <span>Brand:</span> {detail.brand}
-            </h2>
-            <h2 className="detail">
-              <span>description:</span> {detail.description}
-            </h2>
-          </div>
-          <div className="circle"></div>
-          <div className="imgWrapper">
-            <img src={detail.thumbnail} alt={detail.title}></img>
-          </div>
+    <div className="detailWrapper">
+      <Card className="detailItem">
+        <div className="detailImg">
+          <Card.Img variant="top" src={thumbnail} />
         </div>
-        <ItemCount stock={detail.stock} handleCount={handleCount} />
-        {/* handleCount={handleCount} */}
-        {/* {count === 1 ? (
-        ) : (
-          <Card>
-            <Link to={`/cart`}>
-              <Button className="checkoutButton">Checkout (ver consola)</Button>
-            </Link>
-          </Card>
-        )} */}
-      </div>
-    </>
+        <div className="detailContent">
+          <Card.Title className="detailTitle">{title}</Card.Title>
+          <Card.Text className="detailDescription">{description} </Card.Text>
+          <Card.Text className="detailStock">${price} USD</Card.Text>
+          <Card.Text className="detailStock">Stock: {stock} </Card.Text>
+          {cartState ? (
+            <>
+              <Link to={"/cart"}>
+                <Button className="goToCartButton">Go to Cart</Button>
+              </Link>
+              <Button
+                className="continueShoppingButton"
+                onClick={continueShopping}
+              >
+                Continue Shopping
+              </Button>
+            </>
+          ) : (
+            <ItemCount stock={stock} onAdd={onAdd} />
+          )}
+        </div>
+      </Card>
+    </div>
   );
 };
 

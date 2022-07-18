@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { Card, Button, ListGroup } from "react-bootstrap";
-// import Rocket from "../../assets/rocket/rocket.svg";
+import { Button } from "react-bootstrap";
+import cartImg from "../../assets/cartIcon/shopping_cart.svg";
 import "./ItemCount.scss";
-const ItemCount = ({ stock, handleCount }) => {
+const ItemCount = ({ stock, onAdd }) => {
   const [count, setCount] = useState(1);
 
-  const onAdd = () => {
+  const addHandler = () => {
     count < stock ? setCount(count + 1) : setCount(stock);
   };
 
-  const onSubstract = () => {
+  const removeHandler = () => {
     count > 1 ? setCount(count - 1) : setCount(1);
   };
 
@@ -23,33 +23,30 @@ const ItemCount = ({ stock, handleCount }) => {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          {/* <Card.Title>Item</Card.Title>
-          <Card.Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Card.Text> */}
-          <ListGroup variant="flush">
-            <ListGroup.Item>
-              <Button
-                onClick={onSubstract}
-                disabled={disabledMinus()}
-                variant="light"
-              >
-                -
-              </Button>{" "}
-              <Button variant="light">{count}</Button>{" "}
-              <Button onClick={onAdd} disabled={disabledPlus()} variant="light">
-                +
-              </Button>{" "}
-            </ListGroup.Item>
-          </ListGroup>
-          <Button onClick={handleCount(count)}>Add to Cart</Button>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Stock: {stock} (ver consola)</small>
-        </Card.Footer>
-      </Card>
+      <div className="counterWrapper">
+        <div className="counterButtons">
+          <Button
+            onClick={removeHandler}
+            disabled={disabledMinus()}
+            variant="light"
+          >
+            <span>-</span>
+          </Button>{" "}
+          <Button variant="light">
+            <span>{count}</span>
+          </Button>{" "}
+          <Button
+            onClick={addHandler}
+            disabled={disabledPlus()}
+            variant="light"
+          >
+            <span>+</span>
+          </Button>{" "}
+        </div>
+        <Button onClick={() => onAdd(count)} className="addToCartButton">
+          Add to Cart <img src={cartImg} alt="shopping cart img" />
+        </Button>
+      </div>
     </>
   );
 };

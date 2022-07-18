@@ -13,6 +13,7 @@ const ItemList = ({ data }) => {
               /* description, */
               stock,
               id,
+              price,
             } = item;
             return (
               <Item
@@ -22,6 +23,7 @@ const ItemList = ({ data }) => {
                 stock={stock}
                 key={id}
                 id={id}
+                price={price}
               />
             );
           })}
