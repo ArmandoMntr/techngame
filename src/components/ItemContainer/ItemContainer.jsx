@@ -21,7 +21,7 @@ const ItemContainer = () => {
           : data.products;
 
         resolve(myData);
-      }, 1000);
+      }, 1);
     });
 
     getItems

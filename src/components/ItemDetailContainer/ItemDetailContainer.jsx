@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
         );
 
         resolve(myData);
-      }, 1000);
+      }, 1);
     });
 
     getItems

@@ -1,8 +1,7 @@
 .landing {
-  height: 100%;
   background-color: rgb(247, 241, 234);
   @media screen and (min-width: 1192px) {
-    height: 100vh;
+    height: 100%;
   }
   .cardsWrapper {
     display: flex;
