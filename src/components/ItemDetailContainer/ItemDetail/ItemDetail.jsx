@@ -35,12 +35,14 @@ const ItemDetail = ({ detail }) => {
               <Link to={"/cart"}>
                 <Button className="goToCartButton">Go to Cart</Button>
               </Link>
-              <Button
-                className="continueShoppingButton"
-                onClick={continueShopping}
-              >
-                Continue Shopping
-              </Button>
+              <>
+                <Button
+                  className="continueShoppingButton"
+                  onClick={continueShopping}
+                >
+                  Continue Shopping
+                </Button>
+              </>
             </>
           ) : (
             <ItemCount stock={stock} onAdd={onAdd} />
