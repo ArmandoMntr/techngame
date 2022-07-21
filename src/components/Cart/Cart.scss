@@ -7,6 +7,7 @@
 .cartWrapper {
   @include horizontalCenter;
   background-color: rgb(247, 241, 234);
+  min-height: 100vh;
   .cartTitle {
     @include horizontalCenter;
     margin: 5vh 0;

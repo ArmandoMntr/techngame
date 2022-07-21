@@ -100,8 +100,8 @@ const data = {
         "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
       rating: 4.43,
       stock: 68,
-      brand: "Dell",
-      category: "Bose",
+      brand: "Bose",
+      category: "headphones",
       thumbnail:
         "https://m.media-amazon.com/images/I/51BcwAyqVZL._AC_SL1200_.jpg",
     },

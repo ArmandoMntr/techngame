@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 const Item = ({
   img,
   title,
-  //  description
-  stock,
+
   price,
   id,
 }) => {
@@ -18,8 +17,6 @@ const Item = ({
         <Card.Title className="cardTitle">{title}</Card.Title>
 
         <Card.Text className="cardStock">${price} USD</Card.Text>
-        {/* <Card.Text>{description}</Card.Text> */}
-        {/* <Button variant="primary">More details</Button> */}
       </Card>
     </Link>
   );
