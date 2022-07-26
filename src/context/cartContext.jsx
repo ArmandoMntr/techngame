@@ -11,8 +11,8 @@ export const CartContextProvider = ({ defaultValue = [], children }) => {
   };
 
   const addToCart = (item, quantity) => {
-    console.log(item, "item");
-    console.log(quantity, "quantity");
+    // console.log(item, "item");
+    // console.log(quantity, "quantity");
     if (isInCart(item.id)) {
       const newCart = [...cart];
       for (const element of newCart) {

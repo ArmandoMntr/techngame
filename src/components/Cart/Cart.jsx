@@ -35,8 +35,8 @@ const Cart = () => {
             const { id, thumbnail, brand, price, title } = item.item;
             const { quantity } = item;
             return (
-              <div className="cartItemContainer">
-                <h4 key={id}> {title}</h4>
+              <div className="cartItemContainer" key={id}>
+                <h4 key={title}> {title}</h4>
                 <div className="cartItemDetail">
                   <div className="cartItemImg">
                     <img src={thumbnail} alt="product"></img>
