@@ -7,6 +7,7 @@ import {
   where,
   getDoc,
   doc,
+  addDoc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -47,4 +48,17 @@ export const getItemById = async (id) => {
   const docSnapshot = await getDoc(docRef);
   const data = { ...docSnapshot.data(), id: docSnapshot.id };
   return data;
+};
+
+export const sendOrder = async (buyer, items, total) => {
+  const order = {
+    // buyer: { name: "testname", phone: 123, email: "a@test.com" },
+    buyer: buyer,
+    // items: [{ name: "itemtest1", price: 2, quantity: 13 }],
+    items: items,
+    date: new Date().toLocaleDateString(),
+    total: total,
+  };
+  const ordersCollection = collection(db, "orders");
+  addDoc(ordersCollection, order).then(({ id }) => id);
 };

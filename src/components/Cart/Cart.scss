@@ -51,8 +51,14 @@
     margin: 5vh 2vh;
   }
   .cartPriceEmpty {
+    .checkoutButton {
+      margin: 10px 10px;
+      background-color: green;
+      border: green;
+    }
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     p {
       font-weight: bold;

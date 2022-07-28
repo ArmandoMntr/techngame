@@ -1,0 +1,14 @@
+.checkoutWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  text-align: center;
+  .checkoutImg {
+    img {
+      height: 10vh;
+      width: auto;
+    }
+  }
+}

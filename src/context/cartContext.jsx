@@ -11,16 +11,16 @@ export const CartContextProvider = ({ defaultValue = [], children }) => {
   };
 
   const addToCart = (item, quantity) => {
-    // console.log(item, "item");
-    // console.log(quantity, "quantity");
     if (isInCart(item.id)) {
       const newCart = [...cart];
+
       for (const element of newCart) {
         if (element.item.id === item.id) {
           element.quantity = element.quantity + quantity;
         }
       }
       setCart(newCart);
+      // console.log(newCart);
     } else {
       setCart([
         ...cart,
