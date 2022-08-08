@@ -26,25 +26,28 @@ const ItemCount = ({ stock, onAdd }) => {
       <div className="counterWrapper">
         <div className="counterButtons">
           <Button
+            className="counterButton"
             onClick={removeHandler}
             disabled={disabledMinus()}
             variant="light"
           >
             <span>-</span>
-          </Button>{" "}
-          <Button variant="light">
+          </Button>
+          <Button variant="light" className="counterButton">
             <span>{count}</span>
-          </Button>{" "}
+          </Button>
           <Button
+            className="counterButton"
             onClick={addHandler}
             disabled={disabledPlus()}
             variant="light"
           >
             <span>+</span>
-          </Button>{" "}
+          </Button>
         </div>
         <Button onClick={() => onAdd(count)} className="addToCartButton">
-          Add to Cart <img src={cartImg} alt="shopping cart img" />
+          Add to Cart
+          <img src={cartImg} alt="shopping cart img" />
         </Button>
       </div>
     </>

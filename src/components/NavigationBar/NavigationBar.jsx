@@ -15,7 +15,7 @@ const NavigationBar = () => {
   ];
 
   return (
-    <Navbar bg="light" expand="lg" className="navBarWrapper">
+    <Navbar sticky="top" bg="light" expand="lg" className="navBarWrapper">
       <Nav.Link as={NavLink} to="/" className="navBarTitle navbar-brand">
         <span>●</span> Tech n' Games
       </Nav.Link>
@@ -34,7 +34,7 @@ const NavigationBar = () => {
               </Nav.Link>
             );
           })}
-          <Nav.Link as={NavLink} to="/cart" className="navBarLink">
+          <Nav.Link as={NavLink} to="/cart" className="navBarCartIcon">
             <Cart />
           </Nav.Link>
         </Nav>

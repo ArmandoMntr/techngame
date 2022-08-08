@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail/ItemDetail";
-import SpinnerLoad from "../SpinerLoad/SpinerLoad";
+import LoadingTitle from "../LoadingTitle/LoadingTitle";
 import { useParams } from "react-router-dom";
 import { getItemById } from "../../services/firestore";
 const ItemDetailContainer = () => {
@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
     setLoading(false);
   }, [itemId]);
 
-  return loading ? <SpinnerLoad /> : <ItemDetail detail={detail} />;
+  return loading ? <LoadingTitle /> : <ItemDetail detail={detail} />;
 };
 
 export default ItemDetailContainer;

@@ -12,6 +12,11 @@
     display: flex;
     justify-content: center;
     font-weight: bold;
+    width: 100%;
+    .counterButton {
+      border: none;
+      width: 33.3%;
+    }
     span {
       font-weight: bolder;
     }
@@ -19,10 +24,14 @@
   .addToCartButton {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: rgb(220, 126, 126);
     border: none;
+
     img {
       margin-left: 8px;
+      height: 30px;
+      width: auto;
     }
     &:hover {
       background-color: rgb(220, 126, 126);

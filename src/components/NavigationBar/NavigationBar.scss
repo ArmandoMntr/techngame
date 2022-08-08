@@ -1,4 +1,5 @@
 .navBarWrapper {
+  min-height: 6vh;
   .navBarTitle {
     font-weight: bold;
     margin-left: 10px;
@@ -17,6 +18,12 @@
     }
     .nav-link {
       margin-left: 30px;
+    }
+    .navBarCartIcon {
+      margin-right: 10px;
+      margin-left: 10px;
+      transition: none;
+      animation: none;
     }
   }
   //side menu
@@ -38,5 +45,13 @@
   }
   @media only screen and (min-width: 992px) {
     padding-bottom: 0;
+  }
+  @media only screen and (max-width: 991px) {
+    .navBarButtons {
+      .navBarCartIcon {
+        margin-left: 26px;
+        transition: none;
+      }
+    }
   }
 }

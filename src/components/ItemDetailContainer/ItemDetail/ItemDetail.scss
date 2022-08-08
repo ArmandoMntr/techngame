@@ -1,5 +1,5 @@
 .detailWrapper {
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgb(247, 241, 234);
   display: flex;
   justify-content: center;
@@ -35,6 +35,7 @@
       justify-content: center;
       flex-direction: column;
       align-items: flex-start;
+      padding: 20px;
       .goToCartButton {
         background-color: rgb(220, 126, 126);
         border: none;

@@ -19,6 +19,7 @@ const ItemDetail = ({ detail }) => {
   const continueShopping = () => {
     setCartState(false);
   };
+
   return (
     <div className="detailWrapper">
       <Card className="detailItem">

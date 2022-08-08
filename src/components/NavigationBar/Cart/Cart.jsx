@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Cart.scss";
 import CartPng from "../../../assets/cartIcon/shopping_cart.svg";
+import { CartContext } from "../../../context/cartContext";
 
 const Cart = () => {
-  return <img src={CartPng} alt="shopping cart" />;
+  const { cart } = useContext(CartContext);
+  return (
+    <div className="cartIconWrapper">
+      {cart.totalQuantity > 0 ? (
+        <span className="itemCountIcon ">{cart.totalQuantity}</span>
+      ) : null}
+      <img src={CartPng} alt="shopping cart" />
+    </div>
+  );
 };
 
 export default Cart;

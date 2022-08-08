@@ -12,7 +12,6 @@ const App = () => {
     <CartContextProvider>
       <BrowserRouter>
         <NavigationBar />
-
         <Routes>
           <Route path="/" element={<ItemContainer />} />
           <Route path="/category/:params" element={<ItemContainer />} />
