@@ -1,0 +1,14 @@
+.goBackButton {
+  background-color: #7f7fdc;
+  border: #7f7fdc;
+  margin: 1vh 1vh;
+  // max-height: 2vh;
+  &:hover {
+    background-color: #77caca;
+    border: #77caca;
+  }
+  .goBackButtonImg {
+    width: 2vh;
+    height: 2vh;
+  }
+}

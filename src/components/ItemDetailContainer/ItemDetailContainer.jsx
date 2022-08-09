@@ -3,6 +3,7 @@ import ItemDetail from "./ItemDetail/ItemDetail";
 import LoadingTitle from "../LoadingTitle/LoadingTitle";
 import { useParams } from "react-router-dom";
 import { getItemById } from "../../services/firestore";
+
 const ItemDetailContainer = () => {
   const [detail, setDetail] = useState({});
   const [loading, setLoading] = useState(true);

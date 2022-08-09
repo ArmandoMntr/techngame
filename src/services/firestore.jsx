@@ -50,15 +50,7 @@ export const getItemById = async (id) => {
   return data;
 };
 
-export const sendOrder = async (buyer, items, total) => {
-  const order = {
-    // buyer: { name: "testname", phone: 123, email: "a@test.com" },
-    buyer: buyer,
-    // items: [{ name: "itemtest1", price: 2, quantity: 13 }],
-    items: items,
-    date: new Date().toLocaleDateString(),
-    total: total,
-  };
+export const placeOrder = async (order) => {
   const ordersCollection = collection(db, "orders");
-  addDoc(ordersCollection, order).then(({ id }) => id);
+  addDoc(ordersCollection, order).then(({ id }) => console.log(id));
 };

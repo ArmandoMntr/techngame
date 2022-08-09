@@ -11,8 +11,12 @@
   .cartTitle {
     @include horizontalCenter;
     margin: 5vh 0;
+
     flex-direction: row;
-    align-items: unset;
+    align-items: center;
+    h3 {
+      margin-top: 2vh;
+    }
     img {
       margin-top: 3px;
     }
@@ -38,34 +42,15 @@
           background-color: lightgrey;
           color: black;
           border: 1px solid lightgrey;
+          .removeItemButtonImg {
+            height: 2.5vh;
+            width: auto;
+          }
         }
         span {
           font-weight: bold;
         }
       }
-    }
-  }
-  .goBackButtonCart {
-    background-color: rgb(220, 126, 126);
-    border: rgb(220, 126, 126);
-    margin: 5vh 2vh;
-  }
-  .cartPriceEmpty {
-    .checkoutButton {
-      margin: 10px 10px;
-      background-color: green;
-      border: green;
-    }
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    p {
-      font-weight: bold;
-    }
-    .emptyButtonCart {
-      background-color: rgb(95, 86, 86);
-      border: 1px solid rgb(136, 135, 135);
     }
   }
 }

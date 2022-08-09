@@ -4,7 +4,7 @@ import ItemCount from "../../ItemCount/ItemCount";
 import "./ItemDetail.scss";
 import { CartContext } from "../../../context/cartContext";
 import { Link } from "react-router-dom";
-
+import GoBackButton from "../../GoBackButton/GoBackButton";
 const ItemDetail = ({ detail }) => {
   const { thumbnail, title, price, stock, description } = detail;
   const { addToCart } = useContext(CartContext);
@@ -24,7 +24,8 @@ const ItemDetail = ({ detail }) => {
     <div className="detailWrapper">
       <Card className="detailItem">
         <div className="detailImg">
-          <Card.Img variant="top" src={thumbnail} />
+          <Card.Img className="detailImgImg" variant="top" src={thumbnail} />
+          <GoBackButton />
         </div>
         <div className="detailContent">
           <Card.Title className="detailTitle">{title}</Card.Title>
@@ -46,7 +47,9 @@ const ItemDetail = ({ detail }) => {
               </>
             </>
           ) : (
-            <ItemCount stock={stock} onAdd={onAdd} />
+            <>
+              <ItemCount stock={stock} onAdd={onAdd} />
+            </>
           )}
         </div>
       </Card>

@@ -1,14 +1,54 @@
 .checkoutWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
-  text-align: center;
-  .checkoutImg {
-    img {
-      height: 10vh;
-      width: auto;
+  .checkoutTitle {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .checkoutDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+  .checkoutForm {
+    width: 30vw;
+    margin-right: 10px;
+  }
+  .checkoutOrder {
+    width: 30vw;
+    border: 1px solid #ccc;
+    padding: 10px;
+    .checkoutOrderTitle {
+      text-align: center;
+    }
+    .checkoutTotalPrice {
+      font-weight: bold;
+      margin-top: 10px;
+      border-top: 1px solid black;
+      padding-top: 5px;
+      width: 50%;
+    }
+    .checkoutColumns {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      .checkoutColumns2 {
+        display: flex;
+        flex-direction: row;
+      }
+      .checkoutColsTitle {
+        width: 50%;
+        span {
+          font-weight: bold;
+        }
+      }
+      .checkoutColsPrice {
+        width: 50%;
+      }
+    }
+    .checkoutOrderSubtitles {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
     }
   }
 }

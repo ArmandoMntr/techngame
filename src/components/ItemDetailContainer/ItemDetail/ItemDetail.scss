@@ -18,16 +18,21 @@
       align-items: center;
     }
     .detailImg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       margin-right: 50px;
       @media screen and (max-width: 991px) {
         margin-right: 0;
       }
-      img {
+      .detailImgImg {
         @media screen and (max-width: 991px) {
           height: 40vh;
           width: auto;
         }
         height: auto;
+        width: 40vh;
       }
     }
     .detailContent {

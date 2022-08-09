@@ -1,0 +1,15 @@
+.clearCartWrapper {
+  width: 45vh;
+  align-items: flex-start;
+  margin: 30px 0px;
+  .clearCartButton {
+    background-color: #ebeb4b;
+    border: #dcdc7f;
+    color: black;
+    &:hover {
+      background-color: #dede4d;
+      border: #dcdc7f;
+      color: black;
+    }
+  }
+}

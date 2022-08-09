@@ -11,7 +11,7 @@ export const CartContextProvider = ({ defaultValue = [], children }) => {
   });
 
   const clearCart = () => {
-    setCart([]);
+    setCart({ cartContent: [], totalQuantity: 0, totalPrice: 0 });
   };
 
   const countTotalQuantity = (cart) => {
