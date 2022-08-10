@@ -1,5 +1,6 @@
 import { createContext, useState, useContext } from "react";
-import { placeOrder } from "../services/firestore";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../services/firestore";
 import { CartContext } from "./cartContext";
 export const CheckoutContext = createContext({});
 const { Provider } = CheckoutContext;
@@ -8,6 +9,7 @@ export const CheckoutContextProvider = ({ children }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [orderId, setOrderId] = useState("");
 
   const formatCart = () => {
     const newCart = [...cart.cartContent];
@@ -40,6 +42,11 @@ export const CheckoutContextProvider = ({ children }) => {
     setEmail(e.target.value);
   };
 
+  const placeOrder = async (order) => {
+    const ordersCollection = collection(db, "orders");
+    addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
+  };
+
   const submithandler = (e) => {
     e.preventDefault();
 
@@ -52,9 +59,10 @@ export const CheckoutContextProvider = ({ children }) => {
       buyer: buyer,
       items: formatCart(),
       totalPrice: cart.totalPrice,
-      date: new Date().toLocaleDateString(),
+      date: new Date().toLocaleString(),
     };
     placeOrder(order);
+
     clearCart();
     setCheckout(true);
   };
@@ -66,6 +74,8 @@ export const CheckoutContextProvider = ({ children }) => {
     checkout,
     submithandler,
     changeCheckout,
+    orderId,
+    name,
   };
 
   return <Provider value={context}>{children}</Provider>;

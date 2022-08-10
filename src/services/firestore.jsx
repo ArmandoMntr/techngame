@@ -7,10 +7,9 @@ import {
   where,
   getDoc,
   doc,
-  addDoc,
 } from "firebase/firestore";
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyBMm0rUQu6Xl7vkNH10avzPHxIHapbexjA",
   authDomain: "techngames-c3efb.firebaseapp.com",
   projectId: "techngames-c3efb",
@@ -20,7 +19,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export const db = getFirestore(app);
 const productCollectionRef = collection(db, "products");
 
 export const getAllProducts = async () => {
@@ -48,9 +47,4 @@ export const getItemById = async (id) => {
   const docSnapshot = await getDoc(docRef);
   const data = { ...docSnapshot.data(), id: docSnapshot.id };
   return data;
-};
-
-export const placeOrder = async (order) => {
-  const ordersCollection = collection(db, "orders");
-  addDoc(ordersCollection, order).then(({ id }) => console.log(id));
 };

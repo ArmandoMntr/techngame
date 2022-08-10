@@ -1,28 +1,54 @@
-## techngame
+# techngame
 
-e-commerce dedicated to video games and technological equipment
+## E-commerce dedicated to video games and headphones
 
-In the project directory, you can run:
+> How to run this project:
 
-### `npm install`
+- Clone this repository
 
-To install all the necessary dependencies for the app
+> In the project directory, to install all the necessary dependencies for the app, run in your terminal.
 
-### `npm start`
+```
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000] to view it in your browser.
+```
 
-## dependencies
+> Runs the app in the development mode. Open [http://localhost:3000] to view it in your browser.
 
-> bootstrap and react-bootstrap
+```
 
-used for styles and prebuild components
+ npm start
+
+```
+
+## Dependencies
+
+> react-bootstrap
+
+Styles and prebuild components.
 
 > react-router-dom
 
-used for the navigation in the app
+Navigation within the app.
 
 > sass
 
-preprocessor used for easily override bootstrap styles
+Preprocessor used for easily override bootstrap styles.
+
+> firestore
+
+Data persistence and product queries.
+
+## Features
+
+> Custom queries depending on the category to display products.
+
+> Detailed view for the products
+
+> Implementation of a dynamic shopping cart
+
+> Generation of orders with persistence in firestore
+
+## Navigation and app running
+
+![](/public/techngames.gif)
